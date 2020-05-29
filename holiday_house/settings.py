@@ -116,7 +116,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media', 'property_images')
 
 
 # Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+# # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
