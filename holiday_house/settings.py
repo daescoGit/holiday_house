@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import environ
+env = environ.Env(
+)
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rental'
 ]
 
 MIDDLEWARE = [
@@ -70,15 +76,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'holiday_house.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
@@ -113,6 +111,22 @@ USE_L10N = True
 
 USE_TZ = True
 
+MEDIA_URL = '/media/property_images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media', 'property_images')
+
+
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'HolidayHouse',
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),   # Or an IP Address that your DB is hosted on
+        'PORT': os.environ.get('DB_PORT'),
+    }
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
