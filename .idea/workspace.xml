@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cf904c6-774d-4805-8621-51d298bc7d4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/holiday_house/example.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/holiday_house/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/holiday_house/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rental/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,15 +56,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="DatabaseDriversLRU" value="sqlite&#10;mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/rental/static/rental/uploads/property_images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\salik\PycharmProjects\holiday_house\holiday_house" />
       <recent name="C:\Users\salik\PycharmProjects\holiday_house\rental\static\rental\uploads\property_images" />
     </key>
   </component>
@@ -105,7 +106,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590747530336</updated>
-      <workItem from="1590747531841" duration="9470000" />
+      <workItem from="1590747531841" duration="12113000" />
     </task>
     <servers />
   </component>
@@ -113,29 +114,41 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590751514930">
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590761074077">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590751514930" />
-    <state x="549" y="141" key="FileChooserDialogImpl" timestamp="1590751508473">
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590761074077" />
+    <state x="542" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590760242042">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="141" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590751508473" />
-    <state width="1492" height="190" key="GridCell.Tab.0.bottom" timestamp="1590757990373">
+    <state x="542" y="202" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590760242042" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590759538738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590757990373" />
-    <state width="1492" height="190" key="GridCell.Tab.0.center" timestamp="1590757990373">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590759538738" />
+    <state x="549" y="141" key="FileChooserDialogImpl" timestamp="1590760935178">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="190" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590757990373" />
-    <state width="1492" height="190" key="GridCell.Tab.0.left" timestamp="1590757990373">
+    <state x="549" y="141" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590760935178" />
+    <state width="1492" height="190" key="GridCell.Tab.0.bottom" timestamp="1590759183230">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="190" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590757990373" />
-    <state width="1492" height="190" key="GridCell.Tab.0.right" timestamp="1590757990373">
+    <state width="1492" height="190" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590759183230" />
+    <state width="1492" height="190" key="GridCell.Tab.0.center" timestamp="1590759183230">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="190" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590757990373" />
+    <state width="1492" height="190" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590759183230" />
+    <state width="1492" height="190" key="GridCell.Tab.0.left" timestamp="1590759183230">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="190" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590759183230" />
+    <state width="1492" height="190" key="GridCell.Tab.0.right" timestamp="1590759183230">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="190" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590759183230" />
+    <state x="277" y="55" key="SettingsEditor" timestamp="1590760741978">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590760741978" />
   </component>
 </project>
