@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 import uuid
 
+
 class RealCharField(models.Field):
     def db_type(self, connection):
         return 'CHAR'
