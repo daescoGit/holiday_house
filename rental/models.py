@@ -37,6 +37,11 @@ class Property(models.Model):
     address = models.CharField(max_length=100)
     zip = models.ForeignKey(Zip, on_delete=models.PROTECT)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    bedrooms = models.CharField(max_length=2)
+    bathrooms = models.CharField(max_length=2)
+    Accommodates = models.CharField(max_length=4)
+    description = models.CharField(max_length=1000)
+
 
     def __str__(self):
         return f'title={self.title} - price={self.price} - address={self.address} - zip={self.zip} - owner={self.owner}'
@@ -74,6 +79,7 @@ class UserProfile(models.Model):
     role = models.ForeignKey(Role, on_delete=models.PROTECT)
     address = models.CharField(max_length=100)
     zip = models.ForeignKey(Zip, on_delete=models.PROTECT)
+    phone = models.CharField(max_length=20)
 
     def __str__(self):
         return f'user={self.user} - role={self.role} - address={self.address} - zip={self.zip}'
