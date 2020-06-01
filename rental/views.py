@@ -13,15 +13,16 @@ def index(request):
         if 'search_field' in request.POST:
             search_input = request.POST['search_field']
             print(search_input)
-            if type(search_input) is 'int':
-                properties = Property.objects.filter(Q(zip__zip=search_input))
-            else:
+            try:
+                properties = Property.objects.filter(Q(zip__zip=int(search_input)))
+            except:
                 properties = Property.objects.filter(Q(address__iexact=search_input) |
                                                      Q(zip__city__name__iexact=search_input) |
                                                      Q(zip__city__country__name__iexact=search_input))
             print(properties)
     else:
         properties = Property.objects.all()
+
     context = {
         'properties': properties
     }
