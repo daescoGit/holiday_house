@@ -9,6 +9,31 @@
     {% csrf_token %}
     <input type="text" name="search_field">
     <button type="submit">Search</button>
+<button>pool</button><button>Jacuzzi</button><button>Sauna</button><button>Balcony</button>
 </form>
+
+
+<section class="slide-show">
+    <div class="slides">
+
+    </div>
+</section>
+
+
+
+
+<section class="Proberties-con">
+    {% for property in properties %}
+    <div><p>{{property.img}}
+            {{property.title}}
+        {{property.price}}DKK</p></div>
+    {% endfor %}
+ 
+
+
+
+
+</section>
+</div>
 </body>
 </html>
