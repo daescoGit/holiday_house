@@ -133,7 +133,7 @@ img.rounded {
 .accessories li {
     margin-right: 0.5rem;
     display: block;
-    background: #FF9900;;
+    background: #FF9900;
     text-align: center;
     height: 2rem;
     line-height: 2rem;
@@ -142,6 +142,11 @@ img.rounded {
     border-radius: 24px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     list-style: none;
+}
+
+.accessories li[disabled] {
+    background: #E5E5E5;
+    color: #000000;
 }
 
 .booking form {
