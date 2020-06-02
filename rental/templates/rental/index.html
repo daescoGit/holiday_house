@@ -10,7 +10,7 @@
     <input type="text" name="search_field">
     <button type="submit">Search</button>
 </form>
-<button>pool</button><button>Jacuzzi</button><button>Sauna</button><button>Balcony</button>
+<button>Pool</button><button>Jacuzzi</button><button>Sauna</button><button>Balcony</button>
 
 <section class="slide-show">
     <div class="slides">
@@ -21,11 +21,10 @@
 <section class="Proberties-con">
     {% for property in properties %}
     <div>
+        <img src="{{ MEDIA_URL }}{{ property.property_img.first.img }}" alt="{{ property_img.img }}">
         <p>
-        {{property.img}}
         {{property.title}}
         {{property.price}}DKK
-        {{property.}}
     </p>
     </div>
     {% endfor %}

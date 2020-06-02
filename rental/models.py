@@ -44,7 +44,7 @@ class Property(models.Model):
 
 
 class PropertyImg(models.Model):
-    property = models.ForeignKey(Property, on_delete=models.CASCADE)
+    property = models.ForeignKey(Property, related_name='property_img', on_delete=models.CASCADE)
     img = models.ImageField()
     order = models.IntegerField()
 
