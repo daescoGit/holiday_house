@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.decorators.http import require_http_methods
 from django.urls import reverse
@@ -6,7 +7,22 @@ from .models import Property, PropertyImg, Booking
 
 
 def index(request):
-    return render(request, 'rental/index.html')
+    if request.method == 'POST':
+        if 'search_field' in request.POST:
+            search_input = request.POST['search_field']
+            try:
+                properties = Property.objects.filter(Q(zip__zip=int(search_input)))
+            except:
+                properties = Property.objects.filter(Q(address__iexact=search_input) |
+                                                     Q(zip__city__name__iexact=search_input) |
+                                                     Q(zip__city__country__name__iexact=search_input))
+    else:
+        properties = Property.objects.all()
+
+    context = {
+        'properties': properties
+    }
+    return render(request, "rental/index.html", context)
 
 
 def single_property(request, pk):
