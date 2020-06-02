@@ -40,7 +40,7 @@ class Property(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     bedrooms = models.CharField(max_length=2)
     bathrooms = models.CharField(max_length=2)
-    accommodates = models.CharField(max_length=4)
+    accommodates = models.CharField(max_length=2)
     description = models.CharField(max_length=1000)
 
 
