@@ -20,14 +20,16 @@
 
 <section class="properties">
     {% for property in properties %}
-    <article class="grid-2-col">
-        <img class="rounded" src="{{ MEDIA_URL }}{{ property.property_img.first.img }}" alt="{{ property_img.img }}">
-        <section>
-            <p><b>{{property.title}}</b></p>
-            <p>Price: {{property.price}}DKK</p>
-            <p class="description">{{property.description}}</p>
-        </section>
-    </article>
+    <a href="{% url "rental:property" property.pk %}">
+        <article class="grid-2-col">
+            <img class="rounded" src="{{ MEDIA_URL }}{{ property.property_img.first.img }}" alt="{{ property_img.img }}">
+            <section>
+                <p><b>{{property.title}}</b></p>
+                <p>Price: {{property.price}}DKK</p>
+                <p class="description">{{property.description}}</p>
+            </section>
+        </article>
+    </a>
 
     {% endfor %}
 </section>
