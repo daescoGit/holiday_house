@@ -8,6 +8,7 @@ body {
 }
 
 .top-bar {
+    top: 0;
     position: fixed;
     background: #FF9900;
     min-height: 4rem;
@@ -45,6 +46,40 @@ nav, #navControl {
     display: block;;
     background: #FF9900;
     color: white;
+}
+
+main {
+    margin-top: 4rem;
+}
+
+.grid-center {
+    display: grid;
+    justify-items: center;
+}
+
+.grid-center section {
+    justify-items: center;
+}
+
+.search {
+    margin-top: 2em;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 7fr 1fr;
+    max-width: 20rem;
+}
+
+.search input {
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    padding: 0.5rem;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.search button {
+    width: 2rem;
 }
 
 .top-image img {
@@ -104,12 +139,12 @@ img.rounded {
     list-style: none;
 }
 
-form {
+.booking form {
     position: absolute;
     right: 0;
 }
 
-form, #bookingControl {
+.booking form, #bookingControl {
     display: none;
 }
 
@@ -156,4 +191,15 @@ form input {
     width: calc(100vw - 4em);
     display: grid;
     padding: 2em;
+}
+
+.description {
+    display: block;
+    display: -webkit-box;
+    height: 3rem;
+    margin: 0 auto;
+    line-height: 1.4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
