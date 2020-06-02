@@ -1,55 +1,63 @@
 {% extends "rental/base.html" %}
 
 {% block content %}
-    <img src="/media/property_images/{{ images.0.img }}" alt="header-image">
-    <p>{{ property.title }}</p>
+    <section class="top-image">
+        <img src="{{ MEDIA_URL }}/{{ images.0.img }}" alt="header-image">
+        <p>{{ property.title }}</p>
+    </section>
 
-    <div>
-        <form action="{% url 'rental:booking_create' %}" method="POST">
-            {% csrf_token %}
-            <input type="hidden" name="property" value="{{property.pk}}">
-            <input type="date" name="start_date">
-            <input type="date" name="end_date">
-            <button>Make booking</button>
-        </form>
-    </div>
 
-    <div>
-        <p>Email: {{ property.owner.email }}</p>
-        <p>Phone: {{ property.owner.user_profile.phone }}</p>
-    </div>
+    <section class="grid-2-col">
+        <section class="booking">
+            <input type="checkbox" id="bookingControl">
+            <label class="button" for="bookingControl"></label>
+            <form action="{% url 'rental:booking_create' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="property" value="{{property.pk}}">
+                <label for="start_date">Start date</label>
+                <input type="date" id="start_date" name="start_date">
+                <label for="end_date">End date</label>
+                <input type="date" id="end_date" name="end_date">
+                <button>Make booking</button>
+            </form>
+                <ul class="accessories">
+                    <li>Pool</li>
+                    <li>Jacuzzi</li>
+                </ul>
+        </section>
 
-    <div>
-        <div>accessory 1</div>
-        <div>accessory 2</div>
-        <div>accessory 3</div>
-        <div>accessory 4</div>
-    </div>
+        <section>
+            <p><b>Email</b>: {{ property.owner.email }}</p>
+            <p><b>Phone</b>: {{ property.owner.user_profile.phone }}</p>
+        </section>
+    </section>
 
-    <div>
-        <p>Country: {{ property.zip.city.country.name }}</p>
-        <p>City: {{ property.zip.city.name }}</p>
-        <p>Price: {{ property.price }}</p>
-    </div>
-    <div>
-        <p>Bedrooms: {{ property.bedrooms }}</p>
-        <p>Bathrooms: {{ property.bathrooms }}</p>
-        <p>accommodates: {{ property.accommodates }}</p>
-    </div>
+   <section class="grid-2-col">
+       <section>
+           <p><b>Country</b>: {{ property.zip.city.country.name }}</p>
+           <p><b>City</b>: {{ property.zip.city.name }}</p>
+           <p><b>Price</b>: {{ property.price }}</p>
+       </section>
+       <section>
+           <p><b>Bedrooms</b>: {{ property.bedrooms }}</p>
+           <p><b>Bathrooms</b>: {{ property.bathrooms }}</p>
+           <p><b>Accommodate</b>s: {{ property.accommodates }}</p>
+       </section>
+   </section>
 
-    <div id="hej">
-        <img src="/media/property_images/{{ images.1.img }}" alt="header-image">
-        <img src="/media/property_images/{{ images.2.img }}" alt="header-image">
-    </div>
+    <section class="grid-2-col">
+        <img class="rounded" src="{{ MEDIA_URL }}/{{ images.1.img }}" alt="highlighted image">
+        <img class="rounded" src="{{ MEDIA_URL }}/{{ images.2.img }}" alt="highlighted image">
+    </section>
 
-    <div>
+    <section class="slider-images">
         {% for image in images %}
-            <img src="/media/property_images/{{ image.img }}">
+            <img src="{{ MEDIA_URL }}/{{ image.img }}">
         {% endfor %}
-    </div>
+    </section>
 
-    <div>
-    <p>Description:</p>
-    <p>{{ property.description }}</p>
-    </div>
+    <section class="grid-1-col">
+        <p><b>Description</b>:</p>
+        <p>{{ property.description }}</p>
+    </section>
 {% endblock %}

@@ -1,21 +1,34 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'rental/rental.css' %}" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rental.css' %}" media="screen"/>
     <title>Holiday House</title>
 </head>
 <body>
-    <div id="nav">
+<section class="top-bar">
+    <a class="logo" href="{% url 'rental:index' %}"><h1>Holiday house</h1></a>
+    <input type="checkbox" id="navControl">
+    <label class="burger" for="navControl"></label>
+    <nav>
         {% if request.user.is_authenticated %}
-            <p>Welcome {{ user }} - <a href="#">Log out</a></p>
+        <p>Welcome {{ user }} - <a href="{% url 'login:logout' %}">Log out</a></p>
+        {% else %}
+        <a href="{% url 'login:login' %}">Log in</a>
         {% endif %}
-    </div>
-        {% block content %}
-        {% endblock %}
-        {% block footer %}
-        {% endblock %}
+    </nav>
+</section>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+<footer>
+    {% block footer %}
+    {% endblock %}
+</footer>
 </body>
 </html>

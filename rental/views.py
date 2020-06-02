@@ -10,6 +10,7 @@ def index(request):
     if request.method == 'POST':
         if 'search_field' in request.POST:
             search_input = request.POST['search_field']
+            query = request.POST['search_field']
             try:
                 properties = Property.objects.filter(Q(zip__zip=int(search_input)))
             except:
@@ -18,9 +19,11 @@ def index(request):
                                                      Q(zip__city__country__name__iexact=search_input))
     else:
         properties = Property.objects.all()
+        query = ''
 
     context = {
-        'properties': properties
+        'properties': properties,
+        'query': query
     }
     return render(request, "rental/index.html", context)
 
