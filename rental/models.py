@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 import uuid
 
+
 class RealCharField(models.Field):
     def db_type(self, connection):
         return 'CHAR'
@@ -39,7 +40,7 @@ class Property(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     bedrooms = models.CharField(max_length=2)
     bathrooms = models.CharField(max_length=2)
-    accommodates = models.CharField(max_length=4)
+    accommodates = models.CharField(max_length=2)
     description = models.CharField(max_length=1000)
 
 
@@ -48,7 +49,7 @@ class Property(models.Model):
 
 
 class PropertyImg(models.Model):
-    property = models.ForeignKey(Property, on_delete=models.CASCADE)
+    property = models.ForeignKey(Property, related_name='property_img', on_delete=models.CASCADE)
     img = models.ImageField()
     order = models.IntegerField()
 

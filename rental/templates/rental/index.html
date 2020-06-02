@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'rental:index'%}" method="post">
+    {% csrf_token %}
+    <input type="text" name="search_field">
+    <button type="submit">Search</button>
+</form>
+<button>Pool</button><button>Jacuzzi</button><button>Sauna</button><button>Balcony</button>
+
+<section class="slide-show">
+    <div class="slides">
+
+    </div>
+</section>
+
+<section class="Proberties-con">
+    {% for property in properties %}
+    <div>
+        <img src="{{ MEDIA_URL }}{{ property.property_img.first.img }}" alt="{{ property_img.img }}">
+        <p>
+        {{property.title}}
+        {{property.price}}DKK
+    </p>
+    </div>
+    {% endfor %}
+
+</section>
+</body>
+</html>
