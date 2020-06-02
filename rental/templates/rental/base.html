@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'rental/rental.css' %}" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rental.css' %}" media="screen"/>
     <title>Holiday House</title>
 </head>
 <body>
@@ -13,9 +14,13 @@
             <p>Welcome {{ user }} - <a href="#">Log out</a></p>
         {% endif %}
     </div>
+    <main>
         {% block content %}
         {% endblock %}
+    </main>
+    <footer>
         {% block footer %}
         {% endblock %}
+    </footer>
 </body>
 </html>
