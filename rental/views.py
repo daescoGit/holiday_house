@@ -1,11 +1,9 @@
 from django.db.models import Q
-from django.shortcuts import render
-
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.decorators.http import require_http_methods
 from django.urls import reverse
-
-from .models import Property, Booking
+from django.shortcuts import render
+from .models import Property, PropertyImg, Booking
 
 
 def index(request):
@@ -30,13 +28,13 @@ def index(request):
     return render(request, "rental/index.html", context)
 
 
-
-
 def single_property(request, pk):
     property_item = Property.objects.get(pk=pk)
+    property_images = PropertyImg.objects.filter(property=property_item).order_by('order')
 
     context = {
-        'property': property_item
+        'property': property_item,
+        'images': property_images
     }
 
     return render(request, 'rental/property.html', context)
