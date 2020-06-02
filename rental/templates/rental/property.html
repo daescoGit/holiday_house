@@ -1,10 +1,55 @@
-<p>{{ property.title }}</p>
+{% extends "rental/base.html" %}
 
+{% block content %}
+    <img src="/media/property_images/{{ images.0.img }}" alt="header-image">
+    <p>{{ property.title }}</p>
 
-<form action="{% url 'rental:booking_create' %}" method="POST">
-    {% csrf_token %}
-    <input type="hidden" name="property" value="{{property.pk}}">
-    <input type="date" name="start_date">
-    <input type="date" name="end_date">
-    <button>Make booking</button>
-</form>
+    <div>
+        <form action="{% url 'rental:booking_create' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="property" value="{{property.pk}}">
+            <input type="date" name="start_date">
+            <input type="date" name="end_date">
+            <button>Make booking</button>
+        </form>
+    </div>
+
+    <div>
+        <p>Email: {{ property.owner.email }}</p>
+        <p>Phone: {{ property.owner.user_profile.phone }}</p>
+    </div>
+
+    <div>
+        <div>accessory 1</div>
+        <div>accessory 2</div>
+        <div>accessory 3</div>
+        <div>accessory 4</div>
+    </div>
+
+    <div>
+        <p>Country: {{ property.zip.city.country.name }}</p>
+        <p>City: {{ property.zip.city.name }}</p>
+        <p>Price: {{ property.price }}</p>
+    </div>
+    <div>
+        <p>Bedrooms: {{ property.bedrooms }}</p>
+        <p>Bathrooms: {{ property.bathrooms }}</p>
+        <p>accommodates: {{ property.accommodates }}</p>
+    </div>
+
+    <div id="hej">
+        <img src="/media/property_images/{{ images.1.img }}" alt="header-image">
+        <img src="/media/property_images/{{ images.2.img }}" alt="header-image">
+    </div>
+
+    <div>
+        {% for image in images %}
+            <img src="/media/property_images/{{ image.img }}">
+        {% endfor %}
+    </div>
+
+    <div>
+    <p>Description:</p>
+    <p>{{ property.description }}</p>
+    </div>
+{% endblock %}
